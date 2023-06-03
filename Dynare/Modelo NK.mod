@@ -1,6 +1,5 @@
-/* Tarea 2
-Profesor: Ernesto Pastén
-Alumnos: Rodrigo Beltran - Joaquin Cabezas*/
+/* Modelo NK
+*/
 
 // 1. Variables
 //  1.1 Declaración variables Endógenas
@@ -17,7 +16,7 @@ Alumnos: Rodrigo Beltran - Joaquin Cabezas*/
         phia = 0.66; phiinf = 1.5; phii = 0.75; siggma = 1; etta = 1; gama = 1; betta = 0.97; alphha = 0.4; fii = 3; vareps = 0.01; ommega = 1.5; kappa = 0.09; sigmaalpha = 1;
 
 // 3. Declaración del Modelo 
-model(linear); // linear --> entrego eq linearizadas
+model(linear); // linear --> entrego ecuaciones log-linearizadas
 
 Y_hat = Y_hat(+1) - ((1+alphha*(ommega-1))/siggma)*(int_tilde - inflH_hat(+1));  //ecuacion IS
 inflH_hat = kappa*(sigmaalpha+fii)*(Y_hat-Yf_hat)+betta*inflH_hat(+1);           // ecuacion Curva de Phillips
