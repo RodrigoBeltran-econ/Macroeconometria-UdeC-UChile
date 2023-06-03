@@ -1,5 +1,4 @@
 **************
-
 clear all
 import excel "/Users/rodrigobeltranmoreira/Downloads/money.xlsx", sheet("Sheet1") firstrow
 
@@ -22,8 +21,8 @@ gen infl = (p - lp)/lp
 
 **********************************************************
 *logaritmo
-gen ldd = ln(dd)
-gen ly = ln(y)
+gen ldd = ln(dd)        //logaritmo demanda de dinero
+gen ly = ln(y)          // logaritmo del producto
 
 
 graph twoway (line  ldd  date) (line ly date) (line infl date)
@@ -47,6 +46,7 @@ regress D.ldd L1.ldd time
 predict double res2, res
 corrgram res2		//No es ruido blanco, se pasa al ADF
 
+*Test ADF:
 
 dfuller ldd, trend regress lag(4)
 regress D.ldd L1.ldd LD.ldd L2D.ldd L3D.ldd L4D.ldd time
@@ -70,9 +70,6 @@ corrgram res6
 
 //Al ir agregando rezagos llegaremos a que cuando se agrega el 8vo rezago ya
 //no existe autocorrelación de los errores.
-
-
-*Test ADF:
 
 dfuller ldd, trend regress lag(8) //no se rechaza la nula -> se debe eliminar t
 *Chequeamos que no exista autocorrelacion
