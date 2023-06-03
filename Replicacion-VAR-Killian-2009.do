@@ -1,5 +1,5 @@
 ***VAR Killian
-import excel "/Users/rodrigobeltranmoreira/Desktop/Econometria 2/Ayudantias/A5/Kilian2009.xlsx", sheet("Sheet1") firstrow clear
+import excel "/Users/rodrigobeltranmoreira/Desktop/Kilian2009.xlsx", sheet("Sheet1") firstrow clear
 
 
 generate t = tm(1973m1) + _n-1
