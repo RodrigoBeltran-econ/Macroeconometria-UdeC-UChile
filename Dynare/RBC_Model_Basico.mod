@@ -1,6 +1,5 @@
-/* Tarea 1
-Profesor: Ernesto Pastén
-Alumnos: Rodrigo Beltran - Joaquin Cabezas*/
+/* RBC Model Basico
+*/
 
 
 
